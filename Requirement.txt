@@ -1,0 +1,5 @@
+SpeechRecognition
+pyttsx3
+PyAudio
+wikipedia==1.4.0
+web-browser
