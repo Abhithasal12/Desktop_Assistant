@@ -8,7 +8,7 @@ conda create -n assistant python=3.7
 
 
 2. checkout the created vartual environment
-
+ 
 ```bash
 conda env list
 ```
