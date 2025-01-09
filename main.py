@@ -27,13 +27,13 @@ def takeCommand():
     '''This function takes voice from user and returns it as text
     '''
     r = sr.Recognizer()
-    with sr.Microphone() as source:
-        print('Listening...')
-        r.pause_threshold = 2
-        audio = r.listen(source)
+    with sr.Microphone() as source: #->*
+        print('Listening...') # listening means when we are talking write now ... thats why "listening"
+        r.pause_threshold = 2 # pause time 1 to 10
+        audio = r.listen(source) #->*
         
         try:
-            print('Recognizing...')
+            print('Recognizing...') # your command listening your voice, now you talk 
             query = r.recognize_google(audio, language='en-in')
             print(f"User said: {query}\n")
         except Exception as e:
