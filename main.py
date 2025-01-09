@@ -1,7 +1,7 @@
-import pyttsx3, speech_recognition as sr, datetime, wikipedia as wp, webbrowser, os
+import pyttsx3, speech_recognition as sr, datetime, wikipedia as wp, webbrowser, os ##I download some needed library for this project  
              ####### TEXT---TO---SPEECH #######
 # Taking voice from my system
-engine = pyttsx3.init('sapi5') 
+engine = pyttsx3.init('sapi5')  # "engine" the name of patten
 voices = engine.getProperty('voices') #Note= getProperty('voices')= mean we get the (voices) property from pyttsx3.init.    
 #print(voices[1].id)
 
