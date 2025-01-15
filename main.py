@@ -17,7 +17,7 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 
-#speak('hello Love, How are you? I am in love with you sweety ')
+#speak('hello Thasal, How are you? I am in love with you sweety ')
 
                #####SPEECH---TO---TEXT#######
 
@@ -41,5 +41,16 @@ def takeCommand():
             return "none"
         return query
 
-text= takeCommand()        
-speak(text)
+#text= takeCommand()        
+#speak(text)
+if __name__ == "__main__":
+    query = takeCommand().lower()
+    #print(query)
+
+if "wikipedia" in query:   #say last [according to Wikipedia]
+    speak("Searching Wikipedia...")
+    query = query.replace("wikipedia", "")
+    results = wp.summary(query, sentences=2)
+    speak("According to Wikipedia")
+    print(results)
+    speak(results)
