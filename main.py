@@ -40,8 +40,6 @@ def takeCommand():
         except Exception as e:        #Note:-this is a councept when we use try and except (exception)
             query = input("Please type your query: ").strip() #this input function for some kind of reason then we type what we want.
             print(f"User typed: {query}\n")
-
-
         return query
         
    
