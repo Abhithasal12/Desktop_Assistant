@@ -42,8 +42,6 @@ def takeCommand():
             print(f"User typed: {query}\n")
         return query
         
-   
-        
 
 #text= takeCommand()        
 #speak(text)
@@ -74,7 +72,6 @@ if __name__ == "__main__": #main function
    
         query = takeCommand().lower()
 
-            
         if "wikipedia" in query:   #say last [according to Wikipedia]
             speak("Searching Wikipedia...")
             query = query.replace("wikipedia", "")

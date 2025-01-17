@@ -3,3 +3,11 @@ pyttsx3
 PyAudio
 wikipedia==1.4.0
 web-browser
+ try:
+            print('Recognizing...') # your command listening your voice, now you talk 
+            query = r.recognize_google(audio, language='en-in')
+            print(f"User said: {query}\n")
+        except Exception as e:        #Note:-this is a councept when we use try and except (exception)
+            print("Say that again please...")
+            return "none"
+        return query
