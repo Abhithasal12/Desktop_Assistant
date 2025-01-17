@@ -26,6 +26,7 @@ def speak(text):
 def takeCommand():
     '''This function takes voice from user and returns it as text
     '''
+    
     r = sr.Recognizer()
     with sr.Microphone() as source: #->*
         print('Listening...') # listening means when we are talking write now ... thats why "listening"
@@ -37,11 +38,13 @@ def takeCommand():
             query = r.recognize_google(audio, language='en-in')
             print(f"User said: {query}\n")
         except Exception as e:        #Note:-this is a councept when we use try and except (exception)
-            print("Say that again please...")
-            return "none"
-        return query
-    
+            query = input("Please type your query: ").strip()
+            print(f"User typed: {query}\n")
 
+
+        return query
+        
+   
         
 
 #text= takeCommand()        
@@ -52,10 +55,10 @@ def takeCommand():
 def wishMe():
 
     hour = (datetime.datetime.now().hour)
-    if hour>=0 and hour<12:
+    if hour>=0 and hour<13:
         speak("Good morning Abhishek!, how are you?")
 
-    elif hour>=12 and hour<18:
+    elif hour>=13 and hour<18:
         speak("Good afternoon Abhishek!,Whatever action is performed by a great man, common men follow. And whatever standards he sets by exemplary acts, all the world pursues.")
 
     else:
@@ -97,7 +100,7 @@ if __name__ == "__main__": #main function
             print(songs)
             speak("I have found some songs. Please select a song")
             os.startfile(os.path.join(music_dir,songs[0]))
-
+        
         
         elif "time" in query:
             strtime = datetime.datetime.now().strftime("%H:%M:%S")
@@ -106,3 +109,4 @@ if __name__ == "__main__": #main function
         elif "ok bye" in query:
             speak("Thanks for using me, bye bye!")
             exit()
+             
